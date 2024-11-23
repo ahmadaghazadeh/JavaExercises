@@ -21,7 +21,8 @@ public class EnumCollections {
 
         System.out.println("-".repeat(70));
         Map<WeekDay,String[]> employeeMap=new EnumMap<>(WeekDay.class);
-        employeeMap.put(WeekDay.MONDAY, new String[]{"Ali","Abbas"});
-        employeeMap.put(WeekDay.MONDAY, new String[]{"Ali","Abbas"});
+        employeeMap.put(WeekDay.FRIDAY, new String[]{"Ali","Abbas"});
+        employeeMap.put(WeekDay.MONDAY, new String[]{"Ali","Abbas","Ahmad"});
+        employeeMap.forEach((k,v)->System.out.println(k+" "+Arrays.toString(v)));
     }
 }
