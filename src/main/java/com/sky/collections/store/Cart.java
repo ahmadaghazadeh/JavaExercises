@@ -41,12 +41,12 @@ public class Cart {
         int current = products.get(item.getProduct().sku());
         if(current <= qty){
             products.remove(item.getProduct().sku());
-            System.out.println("Removed "+item.getProduct().sku());
+            System.out.println(qty+" Removed "+item.getProduct().name());
         }else {
             products.merge(item.getProduct().sku(),qty,(oldValue,newValue)->oldValue-newValue);
-            System.out.println("Removed "+item.getProduct().sku());
+            System.out.println(qty+" Removed "+item.getProduct().name());
         }
-        item.reserveItem(qty);
+        item.releaseItem(qty);
     }
 
     public void printSalesSlip(Map<String,InventoryItem> inventory){
@@ -58,7 +58,7 @@ public class Cart {
             int qty= cartItem.getValue();
             double itemizedPrice = (item.getPrice()*qty);
             total += itemizedPrice;
-            System.out.println("\t"+cartItem.getKey()+"\t"+item.getProduct().name()+itemizedPrice+"\t"+itemizedPrice);
+            System.out.println("\t"+cartItem.getKey()+"\t"+item.getProduct().name()+"\t("+qty+")"+String.format("%.2f", itemizedPrice));
         }
         System.out.printf("Total sale $%.2f%n:",total);
         System.out.println("-".repeat(80));
@@ -71,5 +71,8 @@ public class Cart {
                 ", cartDate=" + cartDate +
                 ", products=" + products +
                 '}';
+    }
+    public Map<String, Integer> getProducts() {
+        return products;
     }
 }
