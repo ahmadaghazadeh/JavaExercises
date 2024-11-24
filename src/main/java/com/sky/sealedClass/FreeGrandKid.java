@@ -1,4 +1,4 @@
 package com.sky.sealedClass;
 
-public class FreeGrandKid extends NonSealedKid {
+public class FreeGrandKid extends NonSealedKid   {
 }
