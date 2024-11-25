@@ -45,10 +45,8 @@ public class Person {
 
     @Override
     public String toString() {
-        return "Person{" +
+        return
                 "name='" + name + '\'' +
-                ", dob='" + dob + '\'' +
-                ", notes=" + notes +
-                '}';
+                ", dob='" + dob + '\'' ;
     }
 }

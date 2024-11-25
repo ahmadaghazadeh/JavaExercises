@@ -3,6 +3,8 @@ package com.sky.streams;
 import com.sky.lambda.challenge;
 
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class Main {
@@ -72,15 +74,54 @@ public class Main {
 //                .sorted()
 //                .forEach(System.out::println);
 
+//
+//        System.out.println("-".repeat(50));
+////        Stream.iterate(1, i-> i<=100,i -> i +1 )
+////                .peek(s-> System.out.println("peek:"+s))
+////                .dropWhile(x-> x<=10)
+////                .peek(s-> System.out.println("dropWhile:"+s))
+////                .takeWhile(x-> x<=15)
+////                .peek(s-> System.out.println("takeWhile:"+s))
+////                .mapToInt(x-> x+1)
+////                .boxed()
+////                .map("%2d"::formatted)
+////                .forEach(System.out::println);
 
-        System.out.println("-".repeat(50));
-        Stream.iterate(1, i-> i<=100,i -> i +1 )
-                .dropWhile(x-> x<=50)
-                .takeWhile(x-> x<=65)
-                .forEach(System.out::println);
+//        System.out.println("-".repeat(50));
+//         var stream= Stream.iterate(1, i-> i<=100,i -> i +1 )
+//        .dropWhile(x-> x<=10)
+//        .takeWhile(x-> x<=15)
+//        .mapToInt(x-> x);
+//
+//         System.out.println(stream.summaryStatistics());
+
+//        System.out.println("-".repeat(50));
+//        var stream= Stream.iterate(1, i-> i<=100,i -> i +1 )
+//                .collect(Collectors.groupingBy(x-> x%5));
+//
+//        stream.entrySet().forEach(System.out::println);
+//
+
+//        System.out.println("-".repeat(50));
+//        var stream= "This is a string please find max char repeated this sentence."
+//                .chars()
+//                .mapToObj("%2c"::formatted)
+//                .collect(Collectors.groupingBy(x->x,Collectors.counting()))
+//                .entrySet()
+//                .stream()
+//                .sorted(Comparator.comparing(Map.Entry::getValue));
+//
+//        stream.forEach(stringLongEntry -> System.out.println(stringLongEntry.getKey()+" "+stringLongEntry.getValue()));
+
+
+
+
+
     }
 
     private static int getCounter(){
         return counter++;
     }
+
+    private record Statistic(char c, int count){}
 }
