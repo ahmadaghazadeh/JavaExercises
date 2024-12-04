@@ -1,4 +1,4 @@
-package com.sky.concurrency;
+package com.sky.concurrency.exmaple2;
 
 public class ThreadColor {
     public static final String ANSI_RESET = "\u001B[0m";

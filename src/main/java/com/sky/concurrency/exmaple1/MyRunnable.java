@@ -1,6 +1,6 @@
-package com.sky.concurrency;
+package com.sky.concurrency.exmaple1;
 
-import static com.sky.concurrency.ThreadColor.ANSI_RED;
+import static com.sky.concurrency.exmaple1.ThreadColor.ANSI_RED;
 
 public class MyRunnable implements Runnable {
     @Override
